@@ -11,13 +11,24 @@ use Mainstay\Plugin;
  | Public pages: every GET no route of the application answers is looked up
  | as an entry's path and rendered in the entry's view. A host that builds its
  | front end elsewhere leaves the plugin out, and its own fallback route runs.
- | It has no admin screens, so it asks no capability of its own.
+ | It has no admin screens, so it asks no capability of its own. Its dashboard
+ | widget is for whoever may edit and read a type with an address.
  */
 class SitePlugin extends Plugin
 {
     public static function handle(): string
     {
         return 'site';
+    }
+
+    public function views(): ?string
+    {
+        return __DIR__.'/../resources/views';
+    }
+
+    public function widgets(): array
+    {
+        return [SiteWidget::class];
     }
 
     public function migrations(): ?string
