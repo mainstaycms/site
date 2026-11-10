@@ -1,0 +1,15 @@
+{
+    "name": "mainstay/site",
+    "description": "Public pages for Mainstay: every path an entry holds, rendered in its view.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "mainstay/cms": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mainstay\\Site\\": "src/"
+        }
+    }
+}
